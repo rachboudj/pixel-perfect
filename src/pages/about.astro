@@ -1,7 +1,287 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
+
+import emmaImg from '../assets/emma.avif';
+import lucasImg from '../assets/lucas.avif';
+import sarahImg from '../assets/sarah.jpg';
+import thomasImg from '../assets/thomas.avif';
+
+const team = [
+  {
+    name: "Sarah Martinez",
+    role: "Directrice & Full-Stack Developer",
+    image: sarahImg,
+    bio: "Passionnée par l'innovation web, Sarah dirige PixelPerfect avec 8 ans d'expérience en développement et management d'équipe.",
+    skills: ["React", "Node.js", "Leadership", "Strategy"]
+  },
+  {
+    name: "Thomas Dubois",
+    role: "Lead Frontend Developer",
+    image: thomasImg,
+    bio: "Expert en interfaces utilisateur modernes, Thomas transforme les designs en expériences web fluides et performantes.",
+    skills: ["Vue.js", "TypeScript", "CSS", "UX"]
+  },
+  {
+    name: "Emma Chen",
+    role: "UI/UX Designer",
+    image: emmaImg,
+    bio: "Créative et méthodique, Emma conçoit des expériences utilisateur intuitives qui allient esthétique et fonctionnalité.",
+    skills: ["Figma", "Design System", "Prototyping", "User Research"]
+  },
+  {
+    name: "Lucas Moreau",
+    role: "Backend Developer",
+    image: lucasImg,
+    bio: "Architecte des solutions backend robustes, Lucas assure la performance et la sécurité de nos applications.",
+    skills: ["Python", "PostgreSQL", "Docker", "Cloud"]
+  }
+];
+
+const values = [
+  {
+    icon: "🚀",
+    title: "Innovation",
+    description: "Nous restons à la pointe des technologies pour offrir des solutions avant-gardistes."
+  },
+  {
+    icon: "🤝",
+    title: "Collaboration",
+    description: "Nous travaillons main dans la main avec nos clients pour créer ensemble."
+  },
+  {
+    icon: "⚡",
+    title: "Performance",
+    description: "Chaque projet est optimisé pour offrir une expérience utilisateur exceptionnelle."
+  },
+  {
+    icon: "🎯",
+    title: "Qualité",
+    description: "Notre attention aux détails garantit des livrables à la hauteur de vos attentes."
+  }
+];
+
+const journey = [
+  {
+    year: "2019",
+    title: "Les débuts",
+    description: "Création de PixelPerfect par Sarah avec une vision : rendre le web plus beau et plus performant."
+  },
+  {
+    year: "2020",
+    title: "Première expansion",
+    description: "Recrutement de Thomas et Emma. Nos premiers projets e-commerce voient le jour."
+  },
+  {
+    year: "2022",
+    title: "Croissance",
+    description: "Lucas rejoint l'équipe. Nous développons notre expertise en applications complexes."
+  },
+  {
+    year: "2024",
+    title: "Excellence reconnue",
+    description: "Plus de 150 projets réalisés, une équipe experte et des clients fidèles dans toute l'Europe."
+  }
+];
 ---
 
-<Layout title="À propos">
+<Layout title="À propos - PixelPerfect" description="Découvrez l'équipe PixelPerfect, nos valeurs et notre parcours. Une agence web passionnée par l'innovation et l'excellence.">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50 to-pink-100 dark:from-slate-950 dark:via-purple-950 dark:to-pink-950">
+    <div class="absolute inset-0 bg-grid-slate-200 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700"></div>
+    
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium mb-6 dark:bg-purple-900 dark:text-purple-200">
+          👋 Qui sommes-nous ?
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+          Une équipe passionnée par
+          <span class="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
+            l'excellence web
+          </span>
+        </h1>
+        
+        <p class="text-xl text-slate-600 dark:text-slate-400 mb-12 leading-relaxed">
+          Depuis 2019, nous créons des expériences digitales exceptionnelles pour des entreprises 
+          qui partagent notre vision de l'innovation et de la qualité.
+        </p>
+
+        <!-- Stats rapides -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50 dark:bg-slate-900/70 dark:border-slate-800/50">
+            <div class="text-3xl font-bold text-purple-600 mb-2">150+</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Projets réalisés</div>
+          </div>
+          <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50 dark:bg-slate-900/70 dark:border-slate-800/50">
+            <div class="text-3xl font-bold text-pink-600 mb-2">5</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Années d'expérience</div>
+          </div>
+          <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50 dark:bg-slate-900/70 dark:border-slate-800/50">
+            <div class="text-3xl font-bold text-blue-600 mb-2">98%</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Clients satisfaits</div>
+          </div>
+          <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/50 dark:bg-slate-900/70 dark:border-slate-800/50">
+            <div class="text-3xl font-bold text-green-600 mb-2">24/7</div>
+            <div class="text-sm text-slate-600 dark:text-slate-400">Support client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre Histoire -->
+  <section class="py-24 lg:py-32 bg-white/50 dark:bg-slate-900/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+          Notre
+          <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            parcours
+          </span>
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+          De startup ambitieuse à agence reconnue, découvrez les étapes clés de notre évolution.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-400 to-pink-400 hidden md:block"></div>
+          
+          {journey.map((step, index) => (
+            <div class={`relative flex items-center mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <!-- Content -->
+              <div class={`flex-1 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                <div class="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50 shadow-lg hover:shadow-xl transition-all duration-300 dark:bg-slate-900/70 dark:border-slate-800/50">
+                  <div class="text-sm font-medium text-purple-600 dark:text-purple-400 mb-2">{step.year}</div>
+                  <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">{step.title}</h3>
+                  <p class="text-slate-600 dark:text-slate-400 leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+              
+              <!-- Timeline dot -->
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full border-4 border-white dark:border-slate-900 hidden md:block"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nos Valeurs -->
+  <section class="py-24 lg:py-32 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/20 dark:to-pink-950/20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+          Nos
+          <span class="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            valeurs
+          </span>
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+          Ces principes guident chacune de nos décisions et façonnent notre approche unique du développement web.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {values.map((value) => (
+          <div class="group bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 dark:bg-slate-900/70 dark:border-slate-800/50">
+            <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              {value.icon}
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4">
+              {value.title}
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              {value.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre Équipe -->
+  <section class="py-24 lg:py-32 bg-white/50 dark:bg-slate-900/50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+          Notre
+          <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            équipe
+          </span>
+        </h2>
+        <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
+          Rencontrez les talents qui donnent vie à vos projets avec passion et expertise.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {team.map((member) => (
+          <div class="group bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-slate-200/50 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 text-center dark:bg-slate-900/70 dark:border-slate-800/50">
+            <!-- Avatar -->
+            <div class="mb-6">
+                <Image
+                    src={member.image}
+                    alt={`Photo de ${member.name}`}
+                    width={160}
+                    height={160}
+                    class="mx-auto h-full rounded-full shadow-lg"
+                    format="webp"
+                    quality={80}
+                />
+            </div>
+            
+            <!-- Info -->
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
+              {member.name}
+            </h3>
+            <p class="text-purple-600 dark:text-purple-400 font-medium mb-4">
+              {member.role}
+            </p>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 leading-relaxed">
+              {member.bio}
+            </p>
+            
+            <!-- Skills -->
+            <div class="flex flex-wrap gap-2 justify-center">
+              {member.skills.map((skill) => (
+                <span class="px-3 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full dark:bg-purple-900 dark:text-purple-200">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 lg:py-32 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Prêt à créer quelque chose d'extraordinaire ?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Parlons de votre projet et découvrons ensemble comment nous pouvons le transformer en réalité.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-purple-600 bg-white rounded-xl hover:bg-gray-50 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          Démarrer un projet
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/services" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border-2 border-white/30 rounded-xl hover:bg-white/10 transition-all duration-200">
+          Voir nos services
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
