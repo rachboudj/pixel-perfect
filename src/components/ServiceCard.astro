@@ -1,0 +1,47 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  icon: string;
+  features: string[];
+  gradient: string;
+}
+
+const { title, description, icon, features, gradient } = Astro.props;
+---
+
+<div class="group relative overflow-hidden rounded-2xl bg-white/70 backdrop-blur-sm border border-slate-200/50 p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 dark:bg-slate-900/70 dark:border-slate-800/50">
+  <div class={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 ${gradient}`}></div>
+  
+  <div class={`relative inline-flex h-16 w-16 items-center justify-center rounded-2xl ${gradient} mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+    <span class="text-2xl">{icon}</span>
+  </div>
+
+  <div class="relative z-10">
+    <h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+      {title}
+    </h3>
+    
+    <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+      {description}
+    </p>
+
+    <ul class="space-y-2 mb-6">
+      {features.map((feature) => (
+        <li class="flex items-center text-sm text-slate-600 dark:text-slate-400">
+          <svg class="mr-3 h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+          </svg>
+          {feature}
+        </li>
+      ))}
+    </ul>
+
+    <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-md hover:shadow-lg group-hover:scale-105 transform">
+      En savoir plus
+      <svg class="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+      </svg>
+    </a>
+  </div>
+</div>
