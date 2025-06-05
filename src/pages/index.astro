@@ -1,13 +1,360 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-import "../styles/global.css";
-
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
----
-
-<Layout>
-	<Welcome />
+	import Layout from '../layouts/Layout.astro';
+	import ServiceCard from '../components/ServiceCard.astro';
+	import "../styles/global.css";
+	
+	const services = [
+	  {
+		title: "Développement Web",
+		description: "Sites web modernes, performants et optimisés pour tous les appareils. De la vitrine corporate à l'application web complexe.",
+		icon: "💻",
+		gradient: "bg-gradient-to-br from-blue-600 to-blue-800",
+		features: [
+		  "Sites vitrine & institutionnels",
+		  "Applications web sur mesure",
+		  "E-commerce & marketplaces",
+		  "Progressive Web Apps (PWA)"
+		]
+	  },
+	  {
+		title: "Applications Mobiles",
+		description: "Applications natives et cross-platform pour iOS et Android. Performance optimale et expérience utilisateur fluide.",
+		icon: "📱",
+		gradient: "bg-gradient-to-br from-purple-600 to-purple-800",
+		features: [
+		  "Applications natives iOS/Android",
+		  "Développement React Native",
+		  "Applications Flutter",
+		  "Design UX/UI mobile-first"
+		]
+	  },
+	  {
+		title: "Design & UX/UI",
+		description: "Conception d'interfaces utilisateur intuitives et d'expériences mémorables. Du wireframe au prototype interactif.",
+		icon: "🎨",
+		gradient: "bg-gradient-to-br from-pink-600 to-pink-800",
+		features: [
+		  "Audit UX & recherche utilisateur",
+		  "Wireframes & prototypes",
+		  "Design systems complets",
+		  "Identité visuelle & branding"
+		]
+	  }
+	];
+	
+	const testimonials = [
+	  {
+		name: "Sophie Martin",
+		role: "CEO, TechStart",
+		content: "PixelPerfect a transformé notre vision en une application web exceptionnelle. Leur expertise technique et leur attention aux détails sont remarquables.",
+		avatar: "SM"
+	  },
+	  {
+		name: "Alexandre Dubois",
+		role: "Directeur Marketing, InnovateCorp",
+		content: "Une équipe professionnelle qui livre des résultats au-delà de nos attentes. Notre nouveau site web a considérablement amélioré notre présence en ligne.",
+		avatar: "AD"
+	  },
+	  {
+		name: "Marie Leclerc",
+		role: "Fondatrice, DesignStudio",
+		content: "Collaboration exceptionnelle du début à la fin. PixelPerfect comprend vraiment les enjeux business et propose des solutions innovantes.",
+		avatar: "ML"
+	  }
+	];
+	
+	const stats = [
+	  { number: "150+", label: "Projets livrés" },
+	  { number: "50+", label: "Clients satisfaits" },
+	  { number: "5 ans", label: "D'expérience" },
+	  { number: "24h", label: "Temps de réponse" }
+	];
+	---
+	
+	<Layout title="PixelPerfect - Développement Web & Mobile" description="Agence de développement web et mobile. Créons ensemble des solutions digitales innovantes et performantes pour votre entreprise.">
+	  <!-- Hero Section -->
+	  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+		<!-- Background Pattern -->
+		<div class="absolute inset-0 opacity-10">
+		  <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_35%,rgba(255,255,255,.1)_50%,transparent_65%)] bg-[length:20px_20px]"></div>
+		</div>
+		
+		<!-- Gradient Overlay -->
+		<div class="absolute inset-0 bg-gradient-to-br from-black via-slate-900 to-black"></div>
+		
+		<!-- Floating Elements -->
+		<div class="absolute top-20 left-20 w-32 h-32 bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
+		<div class="absolute bottom-20 right-20 w-48 h-48 bg-purple-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+		<div class="absolute top-1/2 left-1/4 w-24 h-24 bg-pink-600/20 rounded-full blur-2xl animate-pulse delay-500"></div>
+		
+		<div class="relative container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+		  <!-- Badge -->
+		  <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-8 border border-white/20 animate-fade-in">
+			<span class="relative flex h-2 w-2 mr-2">
+			  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+			  <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+			</span>
+			Disponible pour nouveaux projets
+		  </div>
+		  
+		  <!-- Main Title -->
+		  <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up">
+			Transformons vos idées
+			<span class="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+			  en solutions digitales
+			</span>
+		  </h1>
+		  
+		  <!-- Subtitle -->
+		  <p class="text-xl sm:text-2xl text-slate-300 mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+			Agence spécialisée dans le développement web, mobile et le design UX/UI. 
+			Nous créons des expériences digitales exceptionnelles qui font grandir votre business.
+		  </p>
+		  
+		  <!-- CTA Buttons -->
+		  <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up delay-300">
+			<a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform">
+			  Démarrer un projet
+			  <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+			  </svg>
+			</a>
+			<a href="/services" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-slate-600 rounded-xl hover:bg-slate-800 transition-all duration-300 hover:scale-105 transform">
+			  Découvrir nos services
+			</a>
+		  </div>
+		  
+		  <!-- Stats -->
+		  <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto animate-fade-in-up delay-400">
+			{stats.map((stat) => (
+			  <div class="text-center">
+				<div class="text-3xl sm:text-4xl font-bold text-white mb-2">{stat.number}</div>
+				<div class="text-sm text-slate-400">{stat.label}</div>
+			  </div>
+			))}
+		  </div>
+		</div>
+		
+		<!-- Scroll Indicator -->
+		<div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+		  <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+		  </svg>
+		</div>
+	  </section>
+	
+	  <!-- Services Section -->
+	  <section class="py-24 lg:py-32 bg-slate-50 dark:bg-slate-900">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		  <!-- Section Header -->
+		  <div class="text-center mb-16">
+			<div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium mb-6">
+			  ⚡ Nos expertises
+			</div>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+			  Des solutions digitales
+			  <span class="block text-slate-600 dark:text-slate-400">complètes et sur mesure</span>
+			</h2>
+			<p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+			  Nous maîtrisons l'ensemble de la chaîne de développement, du design à la mise en production, 
+			  pour créer des solutions qui répondent parfaitement à vos besoins.
+			</p>
+		  </div>
+	
+		  <!-- Services Grid -->
+		  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{services.map((service) => (
+			  <ServiceCard {...service} />
+			))}
+		  </div>
+	
+		  <!-- CTA -->
+		  <div class="text-center mt-16">
+			<a href="/services" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-slate-900 dark:bg-white dark:text-slate-900 rounded-xl hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors duration-200 shadow-lg hover:shadow-xl">
+			  Voir tous nos services
+			  <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+			  </svg>
+			</a>
+		  </div>
+		</div>
+	  </section>
+	
+	  <!-- Testimonials Section -->
+	  <section class="py-24 lg:py-32 bg-black">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		  <!-- Section Header -->
+		  <div class="text-center mb-16">
+			<div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-6 border border-white/20">
+			  💬 Témoignages
+			</div>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+			  Ce que disent nos clients
+			</h2>
+			<p class="text-xl text-slate-300 max-w-3xl mx-auto">
+			  Découvrez les retours de nos clients sur notre travail et notre approche collaborative.
+			</p>
+		  </div>
+	
+		  <!-- Testimonials Grid -->
+		  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			{testimonials.map((testimonial) => (
+			  <div class="bg-slate-900/50 backdrop-blur-sm border border-slate-800 rounded-2xl p-8 hover:bg-slate-900/70 transition-all duration-300 hover:scale-105 transform">
+				<!-- Content -->
+				<div class="mb-6">
+				  <svg class="w-8 h-8 text-blue-400 mb-4" fill="currentColor" viewBox="0 0 24 24">
+					<path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+				  </svg>
+				  <p class="text-slate-300 text-lg leading-relaxed mb-6">
+					"{testimonial.content}"
+				  </p>
+				</div>
+				
+				<!-- Author -->
+				<div class="flex items-center">
+				  <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+					{testimonial.avatar}
+				  </div>
+				  <div>
+					<div class="text-white font-semibold">{testimonial.name}</div>
+					<div class="text-slate-400 text-sm">{testimonial.role}</div>
+				  </div>
+				</div>
+			  </div>
+			))}
+		  </div>
+		</div>
+	  </section>
+	
+	  <!-- Process Section -->
+	  <section class="py-24 lg:py-32 bg-slate-50 dark:bg-slate-900">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		  <!-- Section Header -->
+		  <div class="text-center mb-16">
+			<div class="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 text-sm font-medium mb-6">
+			  🚀 Notre approche
+			</div>
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+			  Un processus éprouvé
+			  <span class="block text-slate-600 dark:text-slate-400">pour des résultats exceptionnels</span>
+			</h2>
+		  </div>
+	
+		  <!-- Process Steps -->
+		  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+			<div class="text-center group">
+			  <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+				1
+			  </div>
+			  <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">Découverte</h3>
+			  <p class="text-slate-600 dark:text-slate-400">Analyse de vos besoins et définition de la stratégie optimale</p>
+			</div>
+	
+			<div class="text-center group">
+			  <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+				2
+			  </div>
+			  <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">Conception</h3>
+			  <p class="text-slate-600 dark:text-slate-400">Design des maquettes et validation de l'architecture technique</p>
+			</div>
+	
+			<div class="text-center group">
+			  <div class="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+				3
+			  </div>
+			  <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">Développement</h3>
+			  <p class="text-slate-600 dark:text-slate-400">Réalisation avec méthodologie agile et livraisons régulières</p>
+			</div>
+	
+			<div class="text-center group">
+			  <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+				4
+			  </div>
+			  <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-4">Lancement</h3>
+			  <p class="text-slate-600 dark:text-slate-400">Déploiement et accompagnement post-lancement</p>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	
+	  <!-- CTA Final -->
+	  <section class="py-24 lg:py-32 bg-black">
+		<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		  <div class="max-w-4xl mx-auto text-center">
+			<h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+			  Prêt à transformer votre
+			  <span class="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+				vision en réalité ?
+			  </span>
+			</h2>
+			<p class="text-xl text-slate-300 mb-12 leading-relaxed">
+			  Contactez-nous dès aujourd'hui pour discuter de votre projet. 
+			  Nous vous accompagnons de l'idée à la réalisation pour créer des solutions qui vous ressemblent.
+			</p>
+			
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+			  <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform">
+				Demander un devis gratuit
+				<svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+				</svg>
+			  </a>
+			  <a href="/about" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-slate-600 rounded-xl hover:bg-slate-900 transition-all duration-300 hover:scale-105 transform">
+				Découvrir notre équipe
+			  </a>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	</Layout>
+	
+	<style>
+	  @keyframes fade-in {
+		from {
+		  opacity: 0;
+		}
+		to {
+		  opacity: 1;
+		}
+	  }
+	
+	  @keyframes fade-in-up {
+		from {
+		  opacity: 0;
+		  transform: translateY(30px);
+		}
+		to {
+		  opacity: 1;
+		  transform: translateY(0);
+		}
+	  }
+	
+	  .animate-fade-in {
+		animation: fade-in 1s ease-out;
+	  }
+	
+	  .animate-fade-in-up {
+		animation: fade-in-up 1s ease-out;
+	  }
+	
+	  .delay-200 {
+		animation-delay: 0.2s;
+	  }
+	
+	  .delay-300 {
+		animation-delay: 0.3s;
+	  }
+	
+	  .delay-400 {
+		animation-delay: 0.4s;
+	  }
+	
+	  .delay-500 {
+		animation-delay: 0.5s;
+	  }
+	
+	  .delay-1000 {
+		animation-delay: 1s;
+	  }
+	</style>
 </Layout>
