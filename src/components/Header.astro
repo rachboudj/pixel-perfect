@@ -1,0 +1,73 @@
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200/50 bg-white/80 backdrop-blur-lg dark:border-slate-800/50 dark:bg-slate-950/80">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <div class="h-8 w-8 rounded-lg bg-black flex items-center justify-center">
+            <span class="text-white font-bold text-sm">PP</span>
+          </div>
+          <span class="text-xl font-bold bg-black bg-clip-text text-transparent">
+            PixelPerfect
+          </span>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-sm font-medium text-slate-700 hover:text-gray-600 transition-colors duration-200">
+            Accueil
+          </a>
+          <a href="/about" class="text-sm font-medium text-slate-700 hover:text-gray-600 transition-colors duration-200">
+            À propos
+          </a>
+          <a href="/services" class="text-sm font-medium text-slate-700 hover:text-gray-600 transition-colors duration-200">
+            Services
+          </a>
+          <a href="/blog" class="text-sm font-medium text-slate-700 hover:text-gray-600 transition-colors duration-200">
+            Blog
+          </a>
+          <a href="/contact" class="text-sm font-medium text-slate-700 hover:text-gray-600 transition-colors duration-200">
+            Contact
+          </a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="/contact" class="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl">
+            Démarrer un projet
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" id="mobile-menu-button">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="md:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-lg border-t border-slate-200/50 dark:bg-slate-950/95 dark:border-slate-800/50">
+          <a href="/" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-gray-600 hover:bg-slate-50 rounded-lg transition-colors duration-200">
+            Accueil
+          </a>
+          <a href="/about" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-gray-600 hover:bg-slate-50 rounded-lg transition-colors duration-200">
+            À propos
+          </a>
+          <a href="/services" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-gray-600 hover:bg-slate-50 rounded-lg transition-colors duration-200">
+            Services
+          </a>
+          <a href="/blog" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-gray-600 hover:bg-slate-50 rounded-lg transition-colors duration-200">
+            Blog
+          </a>
+          <a href="/contact" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-gray-600 hover:bg-slate-50 rounded-lg transition-colors duration-200">
+            Contact
+          </a>
+          <a href="/contact" class="block mx-3 mt-4 px-4 py-2 text-sm font-medium text-white bg-black rounded-lg text-center">
+            Démarrer un projet
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
