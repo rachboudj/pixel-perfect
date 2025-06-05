@@ -1,7 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import "../styles/global.css";
+import ContactForm from '../components/ContactForm.jsx';
 ---
 
-<Layout title="Contact">
+<Layout title="Contact - PixelPerfect" description="Contactez PixelPerfect pour vos projets web, mobiles ou design UX/UI. Nous sommes là pour vous accompagner.">
+  <!-- Hero -->
+  <section class="relative bg-black text-white py-24 lg:py-32">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div class="mb-6 text-sm font-medium inline-block px-4 py-2 border border-white/20 bg-white/10 rounded-full backdrop-blur">
+        📬 Restons en contact
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+        Dites-nous tout
+        <span class="block text-gray-300">sur votre projet</span>
+      </h1>
+      <p class="text-lg text-gray-300">
+        Vous avez une idée, un besoin ou une question ? Envoyez-nous un message et nous reviendrons vers vous rapidement.
+      </p>
+    </div>
+  </section>
+
+  <!-- Formulaire de contact -->
+  <section class="py-24 lg:py-32 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+        <ContactForm client:load />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 lg:py-32 bg-black text-center">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Une idée en tête ?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Nous vous aidons à concrétiser vos projets. Démarrons une collaboration efficace et créative.
+      </p>
+      <a href="/about" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border-2 border-gray-600 rounded-xl hover:bg-gray-900 transition-colors duration-200">
+        En savoir plus sur notre équipe
+      </a>
+    </div>
+  </section>
 </Layout>
