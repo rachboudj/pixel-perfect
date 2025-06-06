@@ -6,9 +6,7 @@ PixelPerfect est un site vitrine moderne développé avec **AstroJS** pour une a
 
 ## 🚀 Démo en ligne
 
-**🔗 [Voir le site déployé](https://votre-site-pixelperfect.netlify.app)**
-
-> *Remplacez ce lien par l'URL de votre déploiement*
+**🔗 [Voir le site déployé](https://6842c4cdb309c0c0cf0ebd49--pixel-perfect-nws.netlify.app/)**
 
 ```
 
