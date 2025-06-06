@@ -1,48 +1,88 @@
-# Astro Starter Kit: Basics
+# PixelPerfect - Agence Web Moderne
 
-```sh
-npm create astro@latest -- --template basics
+## 🌟 À propos du projet
+
+PixelPerfect est un site vitrine moderne développé avec **AstroJS** pour une agence web fictive spécialisée dans la création de sites et applications web. Ce projet présente l'agence, ses services, son équipe et ses réalisations à travers un design attractif et une expérience utilisateur fluide.
+
+## 🚀 Démo en ligne
+
+**🔗 [Voir le site déployé](https://6842c4cdb309c0c0cf0ebd49--pixel-perfect-nws.netlify.app/)**
+
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Installation et développement
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Prérequis
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- Node.js (version 18 ou supérieure)
+- npm ou yarn
 
-## 🚀 Project Structure
+### Installation
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+1. **Cloner le repository**
+```bash
+git clone https://github.com/votre-username/pixelperfect.git
+cd pixelperfect
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+2. **Installer les dépendances**
+```bash
+npm install
+# ou
+yarn install
+```
 
-## 🧞 Commands
+3. **Lancer le serveur de développement**
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-All commands are run from the root of the project, from a terminal:
+4. **Ouvrir dans le navigateur**
+```
+http://localhost:4321
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 📝 Scripts disponibles
 
-## 👀 Want to learn more?
+```bash
+# Développement
+npm run dev          # Lance le serveur de développement
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Production
+npm run build        # Build pour la production
+npm run preview      # Prévisualise le build local
+
+# Maintenance
+npm run astro        # CLI Astro
+npm run astro check  # Vérification TypeScript
+```
+
+## 🎓 Contexte académique
+
+Ce projet a été développé dans le cadre d'une évaluation sur AstroJS, simulant un projet client réel pour une agence web. Il respecte les bonnes pratiques de développement et présente une vitrine en ligne efficace.
+
+### Critères d'évaluation respectés ✅
+
+- [x] Projet Astro correctement initialisé
+- [x] Configuration astro.config.mjs
+- [x] Layout principal avec header et footer
+- [x] Navigation entre 5 pages minimum
+- [x] Page d'accueil complète
+- [x] Page "À propos" avec contenu pertinent
+- [x] Page "Services" détaillée
+- [x] Page de contact avec formulaire
+- [x] 3 composants Astro réutilisables minimum
+- [x] 1 composant React intégré
+- [x] Utilisation correcte des props
+- [x] Styles CSS fonctionnels (Tailwind)
+- [x] Design responsive
+- [x] Images optimisées avec alt text
+- [x] Blog avec Content Collections (3 articles)
+- [x] Configuration Content Collections
+- [x] Pages dynamiques pour les articles
+- [x] Repository GitHub avec commits réguliers
+- [x] README.md complet avec lien de déploiement
+
+---

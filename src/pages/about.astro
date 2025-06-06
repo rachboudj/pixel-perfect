@@ -1,0 +1,339 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+
+import emmaImg from '../assets/emma.avif';
+import lucasImg from '../assets/lucas.avif';
+import sarahImg from '../assets/sarah.jpg';
+import thomasImg from '../assets/thomas.avif';
+
+const team = [
+  {
+    name: "Sarah Martinez",
+    role: "Directrice & Full-Stack Developer",
+    image: sarahImg,
+    bio: "Passionnée par l'innovation web, Sarah dirige PixelPerfect avec 8 ans d'expérience en développement et management d'équipe.",
+    skills: ["React", "Node.js", "Leadership", "Strategy"]
+  },
+  {
+    name: "Thomas Dubois",
+    role: "Lead Frontend Developer",
+    image: thomasImg,
+    bio: "Expert en interfaces utilisateur modernes, Thomas transforme les designs en expériences web fluides et performantes.",
+    skills: ["Vue.js", "TypeScript", "CSS", "UX"]
+  },
+  {
+    name: "Emma Chen",
+    role: "UI/UX Designer",
+    image: emmaImg,
+    bio: "Créative et méthodique, Emma conçoit des expériences utilisateur intuitives qui allient esthétique et fonctionnalité.",
+    skills: ["Figma", "Design System", "Prototyping", "User Research"]
+  },
+  {
+    name: "Lucas Moreau",
+    role: "Backend Developer",
+    image: lucasImg,
+    bio: "Architecte des solutions backend robustes, Lucas assure la performance et la sécurité de nos applications.",
+    skills: ["Python", "PostgreSQL", "Docker", "Cloud"]
+  }
+];
+
+const values = [
+  {
+    icon: "🚀",
+    title: "Innovation",
+    description: "Nous restons à la pointe des technologies pour offrir des solutions avant-gardistes."
+  },
+  {
+    icon: "🤝",
+    title: "Collaboration",
+    description: "Nous travaillons main dans la main avec nos clients pour créer ensemble."
+  },
+  {
+    icon: "⚡",
+    title: "Performance",
+    description: "Chaque projet est optimisé pour offrir une expérience utilisateur exceptionnelle."
+  },
+  {
+    icon: "🎯",
+    title: "Qualité",
+    description: "Notre attention aux détails garantit des livrables à la hauteur de vos attentes."
+  }
+];
+
+const journey = [
+  {
+    year: "2019",
+    title: "Les débuts",
+    description: "Création de PixelPerfect par Sarah avec une vision : rendre le web plus beau et plus performant."
+  },
+  {
+    year: "2020",
+    title: "Première expansion",
+    description: "Recrutement de Thomas et Emma. Nos premiers projets e-commerce voient le jour."
+  },
+  {
+    year: "2022",
+    title: "Croissance",
+    description: "Lucas rejoint l'équipe. Nous développons notre expertise en applications complexes."
+  },
+  {
+    year: "2024",
+    title: "Excellence reconnue",
+    description: "Plus de 150 projets réalisés, une équipe experte et des clients fidèles dans toute l'Europe."
+  }
+];
+---
+
+<Layout title="À propos - PixelPerfect" description="Découvrez l'équipe PixelPerfect, nos valeurs et notre parcours. Une agence web passionnée par l'innovation et l'excellence.">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-black">
+    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+    
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-6 border border-white/20">
+          👋 Qui sommes-nous ?
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Une équipe passionnée par
+          <span class="block text-gray-300">
+            l'excellence web
+          </span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-12 leading-relaxed">
+          Depuis 2019, nous créons des expériences digitales exceptionnelles pour des entreprises 
+          qui partagent notre vision de l'innovation et de la qualité.
+        </p>
+
+        <!-- Stats rapides -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800">
+            <div class="text-3xl font-bold text-white mb-2">150+</div>
+            <div class="text-sm text-gray-400">Projets réalisés</div>
+          </div>
+          <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800">
+            <div class="text-3xl font-bold text-white mb-2">5</div>
+            <div class="text-sm text-gray-400">Années d'expérience</div>
+          </div>
+          <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800">
+            <div class="text-3xl font-bold text-white mb-2">98%</div>
+            <div class="text-sm text-gray-400">Clients satisfaits</div>
+          </div>
+          <div class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800">
+            <div class="text-3xl font-bold text-white mb-2">24/7</div>
+            <div class="text-sm text-gray-400">Support client</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre Histoire -->
+  <section class="py-24 lg:py-32 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Notre parcours
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          De startup ambitieuse à agence reconnue, découvrez les étapes clés de notre évolution.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-black to-gray-600 hidden md:block"></div>
+          
+          {journey.map((step, index) => (
+            <div class={`relative flex items-center mb-12 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+              <!-- Content -->
+              <div class={`flex-1 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                  <div class="text-sm font-medium text-black mb-2">{step.year}</div>
+                  <h3 class="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                  <p class="text-gray-600 leading-relaxed">{step.description}</p>
+                </div>
+              </div>
+              
+              <!-- Timeline dot -->
+              <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-black rounded-full border-4 border-white hidden md:block"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nos Valeurs -->
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Nos valeurs
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Ces principes guident chacune de nos décisions et façonnent notre approche unique du développement web.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {values.map((value) => (
+          <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-black">
+            <div class="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              {value.icon}
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 mb-4">
+              {value.title}
+            </h3>
+            <p class="text-gray-600 leading-relaxed">
+              {value.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre Équipe -->
+  <section class="py-24 lg:py-32 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Notre équipe
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Rencontrez les talents qui donnent vie à vos projets avec passion et expertise.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {team.map((member) => (
+          <div class="group bg-white rounded-2xl p-8 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 text-center">
+            <!-- Avatar -->
+            <div class="mb-6">
+                <Image
+                    src={member.image}
+                    alt={`Photo de ${member.name}`}
+                    width={160}
+                    height={160}
+                    class="mx-auto h-40 w-40 object-cover rounded-full shadow-lg border-4 border-gray-100 group-hover:border-black transition-colors duration-300"
+                    format="webp"
+                    quality={80}
+                />
+            </div>
+            
+            <!-- Info -->
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              {member.name}
+            </h3>
+            <p class="text-black font-medium mb-4">
+              {member.role}
+            </p>
+            <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+              {member.bio}
+            </p>
+            
+            <!-- Skills -->
+            <div class="flex flex-wrap gap-2 justify-center">
+              {member.skills.map((skill) => (
+                <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full hover:bg-black hover:text-white transition-colors duration-200">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+          Ce que disent nos clients
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Leurs retours d'expérience témoignent de notre engagement envers l'excellence.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white font-bold mr-4">
+              M
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Marie Dubois</h4>
+              <p class="text-sm text-gray-500">CEO, TechStart</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">
+            "L'équipe PixelPerfect a su comprendre nos besoins et livrer une solution qui dépasse nos attentes. Professionnalisme et créativité au rendez-vous !"
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white font-bold mr-4">
+              P
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Pierre Lambert</h4>
+              <p class="text-sm text-gray-500">Directeur Marketing, InnoShop</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">
+            "Notre site e-commerce a été transformé ! Les performances ont doublé et nos ventes aussi. Une collaboration exceptionnelle."
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white font-bold mr-4">
+              A
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Anne Rousseau</h4>
+              <p class="text-sm text-gray-500">Fondatrice, CreativeStudio</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">
+            "Rapidité, qualité et écoute. PixelPerfect a concrétisé notre vision avec brio. Je les recommande vivement !"
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 lg:py-32 bg-black">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Prêt à créer quelque chose d'extraordinaire ?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Parlons de votre projet et découvrons ensemble comment nous pouvons le transformer en réalité.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-black bg-white rounded-xl hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+          Démarrer un projet
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/services" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border-2 border-gray-600 rounded-xl hover:bg-gray-900 transition-all duration-200">
+          Voir nos services
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

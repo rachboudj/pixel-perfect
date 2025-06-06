@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+
+const services = [
+  {
+    title: "Développement Web",
+    description: "Sites web modernes, performants et optimisés pour tous les appareils. De la vitrine corporate à l'application web complexe.",
+    icon: "💻",
+    gradient: "bg-black",
+    features: [
+      "Sites vitrine & institutionnels",
+      "Applications web sur mesure", 
+      "E-commerce & marketplaces",
+      "Progressive Web Apps (PWA)",
+      "Optimisation SEO technique",
+      "Intégrations API & webhooks"
+    ],
+    technologies: ["React", "Vue.js", "Astro", "Next.js", "TypeScript", "Node.js"],
+    startingPrice: "À partir de 2 500€"
+  },
+  {
+    title: "Applications Mobiles",
+    description: "Applications natives et cross-platform pour iOS et Android. Performance optimale et expérience utilisateur fluide.",
+    icon: "📱",
+    gradient: "bg-black",
+    features: [
+      "Applications natives iOS/Android",
+      "Développement React Native",
+      "Applications Flutter",
+      "Design UX/UI mobile-first",
+      "Intégrations notifications push",
+      "Publication sur stores"
+    ],
+    technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "Expo"],
+    startingPrice: "À partir de 8 000€"
+  },
+  {
+    title: "Design & UX/UI",
+    description: "Conception d'interfaces utilisateur intuitives et d'expériences mémorables. Du wireframe au prototype interactif.",
+    icon: "🎨",
+    gradient: "bg-black",
+    features: [
+      "Audit UX & recherche utilisateur",
+      "Wireframes & prototypes",
+      "Design systems complets",
+      "Identité visuelle & branding",
+      "Tests utilisateurs",
+      "Guidelines & documentation"
+    ],
+    technologies: ["Figma", "Adobe XD", "Principle", "Framer", "Sketch", "InVision"],
+    startingPrice: "À partir de 1 500€"
+  }
+];
+
+const processSteps = [
+  {
+    number: "01",
+    title: "Découverte",
+    description: "Nous analysons vos besoins, votre marché et vos objectifs pour définir la stratégie optimale.",
+    duration: "1-2 semaines"
+  },
+  {
+    number: "02",
+    title: "Conception",
+    description: "Design des maquettes, architecture technique et validation des choix avec votre équipe.",
+    duration: "2-3 semaines"
+  },
+  {
+    number: "03",
+    title: "Développement",
+    description: "Réalisation technique avec méthodologie agile, tests continus et livraisons régulières.",
+    duration: "4-12 semaines"
+  },
+  {
+    number: "04",
+    title: "Lancement",
+    description: "Déploiement, formation de vos équipes et accompagnement post-lancement.",
+    duration: "1 semaine"
+  }
+];
+
+const faqs = [
+  {
+    question: "Combien de temps prend un projet web ?",
+    answer: "Cela dépend de la complexité : 4-6 semaines pour un site vitrine, 3-6 mois pour une application web complexe."
+  },
+  {
+    question: "Proposez-vous de la maintenance ?",
+    answer: "Oui, nous offrons des contrats de maintenance technique, mises à jour de sécurité et évolutions fonctionnelles."
+  },
+  {
+    question: "Travaillez-vous avec des budgets serrés ?",
+    answer: "Nous adaptons nos solutions à votre budget en priorisant les fonctionnalités essentielles."
+  },
+  {
+    question: "Gérez-vous l'hébergement ?",
+    answer: "Nous vous conseillons sur le choix d'hébergement et pouvons gérer le déploiement et la maintenance."
+  }
+];
+---
+
+<Layout title="Services - PixelPerfect" description="Découvrez nos services : développement web, applications mobiles et design UX/UI. Solutions sur mesure pour votre transformation digitale.">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-black">
+    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+    
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-6 border border-white/20">
+          ⚡ Nos expertises
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Des solutions digitales
+          <span class="block text-gray-300">
+            sur mesure
+          </span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-12 leading-relaxed">
+          Développement web, applications mobiles et design UX/UI. 
+          Nous transformons vos idées en solutions digitales performantes et élégantes.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white mb-2">150+</div>
+            <div class="text-sm text-gray-400">Projets livrés</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white mb-2">50+</div>
+            <div class="text-sm text-gray-400">Technologies maîtrisées</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white mb-2">24h</div>
+            <div class="text-sm text-gray-400">Temps de réponse moyen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services détaillés -->
+  <section class="py-24 lg:py-32 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-24">
+        {services.map((service, index) => (
+          <div class={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+            <!-- Contenu -->
+            <div class={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+              <div class="text-6xl mb-6">{service.icon}</div>
+              <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                {service.title}
+              </h2>
+              <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                {service.description}
+              </p>
+
+              <!-- Features -->
+              <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Ce que nous proposons :</h3>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {service.features.map((feature) => (
+                    <li class="flex items-center text-gray-600">
+                      <svg class="mr-3 h-4 w-4 text-black flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- Technologies -->
+              <div class="mb-8">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Technologies utilisées :</h3>
+                <div class="flex flex-wrap gap-2">
+                  {service.technologies.map((tech) => (
+                    <span class="px-3 py-1 text-sm font-medium bg-black text-white rounded-full">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <!-- Prix -->
+              <div class="flex items-center justify-between p-6 bg-black rounded-xl text-white">
+                <span class="text-lg font-semibold">{service.startingPrice}</span>
+                <a href="/contact" class="inline-flex items-center px-6 py-3 text-sm font-medium text-black bg-white rounded-lg hover:bg-gray-100 transition-colors duration-200">
+                  Demander un devis
+                  <svg class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Visuel -->
+            <div class={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+              <div class="bg-black rounded-2xl p-8 shadow-2xl">
+                <div class="bg-gray-900 rounded-xl p-6 mb-6">
+                  <div class="flex items-center space-x-2 mb-4">
+                    <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                  </div>
+                  <div class="space-y-3">
+                    <div class="h-4 bg-white rounded w-3/4"></div>
+                    <div class="h-4 bg-gray-600 rounded w-full"></div>
+                    <div class="h-4 bg-gray-600 rounded w-2/3"></div>
+                    <div class="grid grid-cols-2 gap-2 mt-6">
+                      <div class="h-16 bg-gray-700 rounded-lg"></div>
+                      <div class="h-16 bg-gray-800 rounded-lg"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center text-white text-sm">
+                  Aperçu {service.title}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre Processus -->
+  <section class="py-24 lg:py-32 bg-black">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+          Notre processus
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+          Une méthodologie éprouvée pour garantir le succès de votre projet, 
+          de la conception initiale au lancement.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {processSteps.map((step) => (
+          <div class="relative">
+            <div class="bg-gray-900 rounded-2xl p-8 border border-gray-800 hover:border-gray-600 transition-colors duration-300">
+              <div class="text-4xl font-bold text-white mb-4">{step.number}</div>
+              <h3 class="text-xl font-bold text-white mb-4">{step.title}</h3>
+              <p class="text-gray-300 mb-6 leading-relaxed">{step.description}</p>
+              <div class="text-sm text-gray-400 font-medium">{step.duration}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 lg:py-32 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Questions fréquentes
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Retrouvez les réponses aux questions les plus courantes sur nos services et notre approche.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-white rounded-2xl border border-gray-200 p-8 hover:shadow-lg transition-shadow duration-300">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">{faq.question}</h3>
+            <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-gray-600 mb-6">Une autre question ?</p>
+        <a href="/contact" class="inline-flex items-center px-8 py-4 text-base font-medium text-white bg-black rounded-xl hover:bg-gray-800 transition-colors duration-200">
+          Nous contacter
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-24 lg:py-32 bg-black">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Prêt à lancer votre projet ?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Discutons de vos besoins et créons ensemble une solution sur mesure 
+        qui dépasse vos attentes.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-black bg-white rounded-xl hover:bg-gray-100 transition-colors duration-200">
+          Demander un devis gratuit
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/about" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border-2 border-gray-600 rounded-xl hover:bg-gray-900 transition-colors duration-200">
+          Découvrir notre équipe
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

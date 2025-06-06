@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const allBlogPosts = await getCollection('blog');
+const sortedPosts = allBlogPosts.sort((a, b) => 
+  new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+---
+
+<Layout title="Blog - PixelPerfect">
+  <div class="relative h-80 flex items-center justify-center overflow-hidden bg-black">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Notre Blog</h1>
+      <p class="text-xl text-white">
+        Découvrez nos insights sur le développement web et les tendances tech
+      </p>
+    </div>
+  </div>
+
+  <div class="container mx-auto px-4 py-12">
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {sortedPosts.map((post) => (
+        <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-3">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('fr-FR')}
+              </time>
+              <span class="mx-2">•</span>
+              <span>{post.data.author}</span>
+            </div>
+            
+            <h2 class="text-xl font-bold text-gray-900 mb-3">
+              <a href={`/blog/${post.slug}/`} class="hover:text-blue-600">
+                {post.data.title}
+              </a>
+            </h2>
+            
+            <p class="text-gray-600 mb-4">
+              {post.data.description}
+            </p>
+            
+            <div class="flex items-center justify-between">
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.slice(0, 2).map((tag) => (
+                  <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              <a 
+                href={`/blog/${post.slug}/`}
+                class="text-blue-600 hover:text-blue-800 font-medium"
+              >
+                Lire →
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>

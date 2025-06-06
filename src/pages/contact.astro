@@ -1,0 +1,327 @@
+---
+import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import ContactForm from '../components/ContactForm.jsx';
+
+const contactMethods = [
+  {
+    title: "Discutons de votre projet",
+    description: "Planifions un appel pour définir ensemble vos besoins et objectifs.",
+    icon: "💬",
+    action: "Programmer un appel",
+    detail: "Gratuit - 30 minutes"
+  },
+  {
+    title: "Envoyez-nous un email",
+    description: "Décrivez votre projet par écrit, nous vous répondons sous 24h.",
+    icon: "📧",
+    action: "hello@pixelperfect.fr",
+    detail: "Réponse garantie"
+  },
+  {
+    title: "Devis express",
+    description: "Obtenez une estimation rapide pour votre projet en quelques clics.",
+    icon: "⚡",
+    action: "Calculateur de prix",
+    detail: "Estimation immédiate"
+  }
+];
+
+const projectTypes = [
+  {
+    name: "Site vitrine",
+    description: "Présentation de votre entreprise avec design moderne",
+    duration: "4-6 semaines",
+    price: "À partir de 2 500€"
+  },
+  {
+    name: "E-commerce",
+    description: "Boutique en ligne complète avec gestion des commandes",
+    duration: "6-10 semaines", 
+    price: "À partir de 5 000€"
+  },
+  {
+    name: "Application web",
+    description: "Solution métier sur mesure avec fonctionnalités avancées",
+    duration: "3-6 mois",
+    price: "À partir de 8 000€"
+  },
+  {
+    name: "Application mobile",
+    description: "App native ou cross-platform pour iOS et Android",
+    duration: "3-8 mois",
+    price: "À partir de 8 000€"
+  },
+  {
+    name: "Design UX/UI",
+    description: "Conception d'interface et expérience utilisateur",
+    duration: "2-4 semaines",
+    price: "À partir de 1 500€"
+  },
+  {
+    name: "Audit & conseil",
+    description: "Analyse de l'existant et recommandations d'amélioration",
+    duration: "1-2 semaines",
+    price: "À partir de 800€"
+  }
+];
+
+const whyChooseUs = [
+  {
+    title: "Expertise reconnue",
+    description: "Plus de 150 projets réalisés avec succès pour des entreprises de toutes tailles.",
+    icon: "🏆"
+  },
+  {
+    title: "Accompagnement complet",
+    description: "De l'idée au lancement, nous vous guidons à chaque étape de votre projet.",
+    icon: "🎯"
+  },
+  {
+    title: "Technologies modernes",
+    description: "Nous utilisons les dernières technologies pour des solutions pérennes.",
+    icon: "⚡"
+  },
+  {
+    title: "Support continu",
+    description: "Maintenance, évolutions et support technique après le lancement.",
+    icon: "🔧"
+  }
+];
+---
+
+<Layout title="Contact - PixelPerfect" description="Contactez PixelPerfect pour vos projets web, mobiles ou design UX/UI. Devis gratuit et réponse sous 24h.">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-black">
+    <div class="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
+    
+    <div class="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium mb-6 border border-white/20">
+          📬 Parlons de votre projet
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Transformons vos idées
+          <span class="block text-gray-300">
+            en réalité digitale
+          </span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 mb-12 leading-relaxed">
+          Vous avez un projet web, mobile ou besoin d'aide en design ? 
+          Nous sommes là pour vous accompagner de A à Z.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-16">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white mb-2">24h</div>
+            <div class="text-sm text-gray-400">Temps de réponse</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white mb-2">Gratuit</div>
+            <div class="text-sm text-gray-400">Premier devis</div>
+          </div>
+          <div class="text-center">
+            <div class="text-3xl font-bold text-white mb-2">7j/7</div>
+            <div class="text-sm text-gray-400">Support disponible</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Méthodes de contact -->
+  <section class="py-24 lg:py-32 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Comment nous contacter ?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Plusieurs options s'offrent à vous pour démarrer votre projet. 
+          Choisissez celle qui vous convient le mieux.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        {contactMethods.map((method) => (
+          <div class="bg-white rounded-2xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="text-4xl mb-6">{method.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-4">{method.title}</h3>
+            <p class="text-gray-600 mb-6 leading-relaxed">{method.description}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-sm text-gray-500 font-medium">{method.detail}</span>
+              <button class="text-black font-semibold hover:underline">
+                {method.action} →
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulaire de contact -->
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <!-- Formulaire -->
+        <div>
+          <div class="mb-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Décrivez-nous votre projet
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Plus vous nous donnez de détails, plus nous pourrons vous proposer 
+              une solution adaptée à vos besoins et votre budget.
+            </p>
+          </div>
+          <ContactForm client:load />
+        </div>
+
+        <!-- Pourquoi nous choisir -->
+        <div class="lg:pl-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-8">
+            Pourquoi travailler avec nous ?
+          </h3>
+          
+          <div class="space-y-6 mb-12">
+            {whyChooseUs.map((reason) => (
+              <div class="flex items-start space-x-4">
+                <div class="text-2xl flex-shrink-0">{reason.icon}</div>
+                <div>
+                  <h4 class="font-semibold text-gray-900 mb-2">{reason.title}</h4>
+                  <p class="text-gray-600 text-sm leading-relaxed">{reason.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Témoignage -->
+          <div class="bg-gray-50 rounded-2xl p-6 border-l-4 border-black">
+            <p class="text-gray-600 italic mb-4">
+              "L'équipe PixelPerfect a su comprendre nos besoins et livrer une solution 
+              qui dépasse nos attentes. Professionnalisme et créativité au rendez-vous !"
+            </p>
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-black rounded-full flex items-center justify-center text-white font-bold mr-3">
+                M
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900">Marie Dubois</div>
+                <div class="text-sm text-gray-500">CEO, TechStart</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Types de projets -->
+  <section class="py-24 lg:py-32 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Quel type de projet avez-vous ?
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Voici un aperçu de nos principales prestations avec des estimations 
+          de délais et de budget pour vous aider à planifier.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projectTypes.map((project) => (
+          <div class="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{project.name}</h3>
+            <p class="text-gray-600 text-sm mb-4 leading-relaxed">{project.description}</p>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-500">Délai :</span>
+                <span class="font-medium text-gray-900">{project.duration}</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-500">Budget :</span>
+                <span class="font-medium text-gray-900">{project.price}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-12">
+        <p class="text-gray-600 mb-4">
+          Vous ne trouvez pas votre projet dans cette liste ?
+        </p>
+        <p class="text-sm text-gray-500">
+          Pas de problème ! Nous créons des solutions sur mesure pour tous types de besoins.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Rapide -->
+  <section class="py-24 lg:py-32 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Questions fréquentes
+        </h2>
+        <p class="text-lg text-gray-600">
+          Les réponses aux questions que nos clients nous posent le plus souvent.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-2">Le devis est-il vraiment gratuit ?</h3>
+            <p class="text-gray-600 text-sm">Oui, totalement ! Nous analysons votre besoin et vous proposons une estimation détaillée sans engagement.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-2">Travaillez-vous avec des petites entreprises ?</h3>
+            <p class="text-gray-600 text-sm">Absolument ! Nous adaptons nos solutions et notre approche à tous types d'entreprises, des startups aux grands groupes.</p>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-2">Proposez-vous de la maintenance ?</h3>
+            <p class="text-gray-600 text-sm">Oui, nous offrons des contrats de maintenance pour assurer la sécurité et les évolutions de votre solution.</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-900 mb-2">Peut-on voir des exemples de vos réalisations ?</h3>
+            <p class="text-gray-600 text-sm">Bien sûr ! Consultez notre portfolio ou demandez-nous des références dans votre secteur d'activité.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-24 lg:py-32 bg-black">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+        Prêt à démarrer ?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Ne laissez pas votre projet dans un tiroir. Contactez-nous dès maintenant 
+        pour obtenir votre devis gratuit et sans engagement.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="document.querySelector('form').scrollIntoView({behavior: 'smooth'})" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-black bg-white rounded-xl hover:bg-gray-100 transition-colors duration-200">
+          Remplir le formulaire
+          <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </button>
+        <a href="tel:+33123456789" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border-2 border-gray-600 rounded-xl hover:bg-gray-900 transition-colors duration-200">
+          📞 Appeler directement
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
