@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import "../styles/global.css";
 
 export interface Props {
   title: string;
@@ -30,7 +31,6 @@ const { title, description = "PixelPerfect - Agence web moderne spécialisée en
   <body class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 font-sans antialiased">
     <div class="relative flex min-h-screen flex-col">
     <Header />
-
       <main class="flex-1">
         <slot />
       </main>
